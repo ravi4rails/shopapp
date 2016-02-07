@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product_bundle.category_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product_bundle.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product_bundle.description %>
+</p>
+
+<%= link_to 'Edit', edit_product_bundle_path(@product_bundle) %> |
+<%= link_to 'Back', product_bundles_path %>

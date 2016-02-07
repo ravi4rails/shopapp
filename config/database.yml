@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
+  database: shopapp
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
+  database: shopapp
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
+  database: shopapp
+  pool: 5

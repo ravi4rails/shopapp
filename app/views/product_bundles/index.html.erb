@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Product Bundles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_bundles.each do |product_bundle| %>
+      <tr>
+        <td><%= product_bundle.category_id %></td>
+        <td><%= product_bundle.name %></td>
+        <td><%= product_bundle.description %></td>
+        <td><%= link_to 'Show', product_bundle %></td>
+        <td><%= link_to 'Edit', edit_product_bundle_path(product_bundle) %></td>
+        <td><%= link_to 'Destroy', product_bundle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product bundle', new_product_bundle_path %>
