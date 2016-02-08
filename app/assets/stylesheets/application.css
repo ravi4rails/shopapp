@@ -10,6 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require font-awesome
+ *= require pageCss/animate
+ *= require pageCss/line-icons
+ *= require pageCss/style
+ *= require pageCss/footer-v4
+ *= require pageCss/green
+ *= require pageCss/header-v5
+ *= require pageCss/shop.blocks
+ *= require pageCss/shop.plugins
+ *= require pageCss/shop.style
+ *= require pageCss/settings
+ *= require pageCss/jquery.mCustomScrollbar
+ *= require pageCss/owl.carousel
  */

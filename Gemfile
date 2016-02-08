@@ -46,3 +46,7 @@ group :development do
   gem 'spring'
 end
 
+gem "cocoon"
+gem "rmagick"
+gem "carrierwave"
+gem "font-awesome-rails"

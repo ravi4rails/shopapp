@@ -1,28 +1,22 @@
 class ProductBundlesController < ApplicationController
   before_action :set_product_bundle, only: [:show, :edit, :update, :destroy]
 
-  # GET /product_bundles
-  # GET /product_bundles.json
   def index
     @product_bundles = ProductBundle.all
   end
 
-  # GET /product_bundles/1
-  # GET /product_bundles/1.json
   def show
   end
 
-  # GET /product_bundles/new
   def new
     @product_bundle = ProductBundle.new
+    @product_bundle.images.build
   end
 
-  # GET /product_bundles/1/edit
   def edit
+    @product_bundle.images.build
   end
 
-  # POST /product_bundles
-  # POST /product_bundles.json
   def create
     @product_bundle = ProductBundle.new(product_bundle_params)
 
@@ -37,8 +31,6 @@ class ProductBundlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /product_bundles/1
-  # PATCH/PUT /product_bundles/1.json
   def update
     respond_to do |format|
       if @product_bundle.update(product_bundle_params)
@@ -51,8 +43,6 @@ class ProductBundlesController < ApplicationController
     end
   end
 
-  # DELETE /product_bundles/1
-  # DELETE /product_bundles/1.json
   def destroy
     @product_bundle.destroy
     respond_to do |format|
@@ -69,6 +59,6 @@ class ProductBundlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_bundle_params
-      params.require(:product_bundle).permit(:category_id, :name, :description)
+      params.require(:product_bundle).permit(:product_category_id, :name, :description, :images_attributes => [:image, :imageable_type, :imageable_id, :_destroy])
     end
 end

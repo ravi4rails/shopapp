@@ -11,15 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-sm-6">
+    <div class="form-group col-sm-12">
+      <div class="col-sm-2">
+        <%= f.label :name %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group col-sm-12">
+      <div class="col-sm-2">
+        <%= f.label :description %>
+      </div>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="image-fields nested_body">
+      <%= f.fields_for :images do |i| %>
+        <%= render :partial => "image_fields", :locals => { :f => i } %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association "Upload New Image", f, :images, class: "btn btn-primary add-images" %>
+      </div><br>
+    </div>
+    <div class="form-group col-sm-12">
+      <div class="">
+        <%= f.submit class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
   </div>
 <% end %>
